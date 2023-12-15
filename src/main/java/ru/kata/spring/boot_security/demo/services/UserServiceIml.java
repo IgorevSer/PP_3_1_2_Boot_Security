@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public class UserServiceIml implements UserService {
-    private UserRepository userRepository;
+    private  UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
     @Autowired

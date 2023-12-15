@@ -14,6 +14,7 @@ import ru.kata.spring.boot_security.demo.services.CustomUserDetailService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
+
     private final SuccessUserHandler successUserHandler;
     private final CustomUserDetailService customUserDetailService;
 
