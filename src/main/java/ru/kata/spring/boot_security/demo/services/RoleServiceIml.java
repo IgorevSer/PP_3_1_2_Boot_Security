@@ -11,10 +11,10 @@ import java.util.List;
 
 @Service
 public class RoleServiceIml implements RoleService {
-    RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
     @Autowired
-    public void setRoleRepository(RoleRepository roleRepository) {
+    public RoleServiceIml(RoleRepository roleRepository) {
         this.roleRepository = roleRepository;
     }
 

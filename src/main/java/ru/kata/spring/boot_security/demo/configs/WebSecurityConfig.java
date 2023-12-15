@@ -13,7 +13,9 @@ import ru.kata.spring.boot_security.demo.services.CustomUserDetailService;
 
 @Configuration
 @EnableWebSecurity
+
 public class WebSecurityConfig {
+
     private final SuccessUserHandler successUserHandler;
     private final CustomUserDetailService customUserDetailService;
 
@@ -29,6 +31,7 @@ public class WebSecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/user").hasAnyRole("ADMIN","USER")
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form

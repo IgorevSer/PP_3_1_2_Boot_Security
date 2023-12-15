@@ -9,12 +9,13 @@ import ru.kata.spring.boot_security.demo.repository.UserRepository;
 
 @Service
 public class CustomUserDetailService implements UserDetailsService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public void setUserRepository(UserRepository userRepository) {
+    public CustomUserDetailService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
